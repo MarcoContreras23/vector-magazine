@@ -1,0 +1,65 @@
+<br />
+<br />
+<br />
+<div class="columns">
+  <div class="column">
+    <article class="tile is-child notification is-light box">
+      <p class="title has-text-centered has-text-dark">Articles</p>
+      <div class="content">
+        <div *ngFor="let article of articles" class="margin">
+          <article class="tile is-child notification boxColor">
+            <div class="columns is-multiline">
+              <div class="column is-4">
+                <p class="title has-text-light">Title: {{ article.title }}</p>
+                <p class="subtitle has-text-light">
+                  KeyWords: {{ article.keywords }}
+                </p>
+              </div>
+              <div class="column">
+                <div class="content">
+                  <p class="subtitle has-text-light">
+                    File:
+                    {{ article.file }}
+                  </p>
+                  <br />
+                  <p class="subtitle has-text-light">
+                    Abstract: {{ article.abstract }}
+                  </p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="row">
+                  <button
+                    class="button is-rounded is-danger has-text-light is-outlined"
+                    (click)="state(article, 3)"
+                  >
+                    Rejected
+                  </button>
+                </div>
+                <br />
+                <div class="row">
+                  <button
+                    class="button is-rounded is-dark has-text-light is-outlined"
+                    (click)="state(article, 2)"
+                  >
+                    Accepted with changes
+                  </button>
+                </div>
+                <br />
+                <div class="row">
+                  <button
+                    class="button is-rounded is-success has-text-light is-outlined"
+                    (click)="state(article, 1)"
+                  >
+                    Accepted
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <br />
+        </div>
+      </div>
+    </article>
+  </div>
+</div>

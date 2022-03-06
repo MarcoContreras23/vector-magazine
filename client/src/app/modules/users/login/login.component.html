@@ -1,0 +1,81 @@
+<form class="hero-body fo" [formGroup]="LoginForm">
+  <div class="box has-background-light Margin">
+    <div class="container has-text-centered">
+      <p class="title has-text-dark">Login</p>
+      <span class="icon">
+        <i class="fas fa-user-tie fa-4x"></i>
+      </span>
+      <div *ngIf="LogErr">
+        <p class="has-text-danger">Email or password wrong!</p>
+      </div>
+      <div *ngIf="!confirm">
+        <p class="has-text-danger">First, you must verify you email to can login!</p>
+      </div>
+      <div *ngIf="confirmLink">
+        <p class="has-text-danger">Yo have already verified your acount!</p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input is-primary is-rounded" type="email" placeholder="Email" formControlName="email"
+            (change)="LogErr = false" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input is-primary is-rounded" type="password" placeholder="Password" formControlName="password"
+            (change)="LogErr = false" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div id="recaptcha" style="width: auto">
+        <ngx-recaptcha2 #captchaElem *ngIf="email.valid && password.valid" [siteKey]="key" (reset)="NoCaptcha()"
+          (expire)="NoCaptcha()" (load)="NoCaptcha()" (success)="ReCaptcha()" [useGlobalDomain]="false"
+          formControlName="recaptcha">
+        </ngx-recaptcha2>
+      </div>
+      <button class="button is-success is-large is-fullwidth is-outlined is-rounded" (click)="Login()"
+        [disabled]="!LoginForm.valid">
+        <span class="icon">
+          <i class="fas fa-sign-in-alt"></i>
+        </span>
+        <span>Login</span>
+      </button>
+      <br />
+      <div>
+        <a class="Link has-text-primary" (click)="forget()">Did you forget your password?</a>
+      </div>
+    </div>
+  </div>
+  <div class="modal" [class.is-active]="Forget">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">VERIFY YOUR EMAIL</p>
+        <button class="delete" aria-label="close" (click)="forget()"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="field">
+          <p class="has-text-black">Write your email adress:</p>
+          <p *ngIf="!exist" class="has-text-danger">This email don't exist, please sing up or write it again</p>
+          <p class="control has-icons-left has-icons-right">
+            <input class="input is-primary is-rounded" type="email" placeholder="Email" formControlName="email" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </p>
+          <br />
+          <p class="has-text-grey">To this email adress will be sent a verification email with your new password.</p>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" (click)="verify()">VERIFY</button>
+        <button class="button" (click)="forget()">Cancel</button>
+      </footer>
+    </div>
+  </div>
+</form>

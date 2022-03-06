@@ -1,0 +1,23 @@
+.navbar-item:hover {
+  background-color: hsl(260, 30%, 24%) !important;
+}
+
+.navbar {
+  /*position: absolute;*/
+  background-color: hsl(310, 49%, 28%);
+  min-width: 100vw;
+}
+
+#login {
+  margin-right: 1vw;
+}
+
+.InSession{
+    width: 13px;
+    height: 13px;
+}
+
+.name {
+  background-color: transparent;
+  border-color: transparent;
+}

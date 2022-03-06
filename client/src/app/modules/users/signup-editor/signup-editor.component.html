@@ -1,0 +1,198 @@
+<form class="container hero-body fo" [formGroup]="SignUPForm">
+  <div class="box has-background-light Margin">
+    <div class="title has-text-dark has-text-centered">Sign Up</div>
+    <span class="icon Icon">
+      <i class="fas fa-user-plus fa-3x"></i>
+    </span>
+    <br />
+    <br />
+    <div class="field">
+      <div class="columns">
+        <div class="column">
+          <label class="label" for="firstName">First Name</label>
+          <div class="control">
+            <input
+              class="input is-rounded"
+              type="text"
+              placeholder="First Name"
+              name="firstName"
+              formControlName="name"
+            />
+          </div>
+        </div>
+        <div class="column">
+          <label class="label" for="secondName">Second Name</label>
+          <div class="control">
+            <input
+              class="input is-rounded"
+              type="text"
+              placeholder="Second Name"
+              name="secondName"
+              formControlName="secondname"
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="columns">
+        <div class="column">
+          <label class="label" for="firstLastName">First Last Name</label>
+          <div class="control">
+            <input
+              class="input is-rounded"
+              type="text"
+              placeholder="First Last Name"
+              name="firstLastName"
+              formControlName="lastname"
+            />
+          </div>
+        </div>
+        <div class="column">
+          <label class="label" for="secondLastName">Second Last Name</label>
+          <div class="control">
+            <input
+              class="input is-rounded"
+              type="text"
+              placeholder="Second Last Name"
+              name="secondLastName"
+              formControlName="secondlastname"
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="columns">
+        <div class="column">
+          <label class="label" for="country">Country</label>
+          <div class="control has-icons-left">
+            <input
+              class="input is-rounded"
+              type="text"
+              placeholder="Country"
+              name="country"
+              formControlName="country"
+            /><span class="icon is-left"
+              ><i class="fas fa-globe-americas"></i
+            ></span>
+          </div>
+        </div>
+        <div class="column">
+          <label class="label" for="phone">Phone</label>
+          <div class="control has-icons-left">
+            <input
+              class="input is-rounded"
+              type="text"
+              placeholder="Phone"
+              name="phone"
+              formControlName="phone"
+            /><span class="icon is-left"><i class="fas fa-phone"></i></span>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="columns">
+        <div class="column">
+          <label class="label" for="email">Email</label>
+          <div class="control has-icons-left">
+            <input
+              class="input is-rounded"
+              type="email"
+              placeholder="Email"
+              name="email"
+              formControlName="email"
+            /><span class="icon is-left"
+              ><i class="fa">envelope-square</i></span
+            >
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="columns">
+        <div class="column">
+          <label class="label" for="afiliation">Afiliation</label>
+          <div class="control has-icons-left">
+            <input
+              class="input is-rounded"
+              type="text"
+              placeholder="Afiliation"
+              name="afiliation"
+              formControlName="afiliation"
+            /><span class="icon is-left"
+              ><i class="fas fa-shield-alt"></i
+            ></span>
+          </div>
+        </div>
+        <div class="column">
+          <label class="label" for="formation">Formation</label>
+          <div class="control has-icons-left">
+            <div class="select is-rounded" id="select">
+              <select #f (change)="SetFormation(f.value)" id="select">
+                <option>Choose your Formation</option>
+                <option>Pre-Grade</option>
+                <option>Especialization</option>
+                <option>Magister</option>
+                <option>PhD</option>
+              </select>
+            </div>
+            <div class="icon is-small is-left">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="columns">
+        <div class="column">
+          <label class="label" for="password">Password</label>
+          <div class="control has-icons-left">
+            <input
+              class="input is-rounded"
+              type="password"
+              placeholder="Password"
+              name="password"
+              formControlName="password"
+            /><span class="icon is-left"><i class="fa">key</i></span>
+          </div>
+        </div>
+        <div class="column">
+          <label class="label" for="retypePassword">Re-Type Password</label>
+          <div class="control has-icons-left">
+            <input
+              class="input is-rounded"
+              type="password"
+              placeholder="Confirm Password"
+              name="retypePassword"
+              formControlName="re_pass"
+            /><span class="icon is-left"><i class="fa">lock</i></span>
+          </div>
+        </div>
+      </div>
+      <div id="recaptcha" style="width: auto">
+        <ngx-recaptcha2
+          #captchaElem
+          *ngIf="Evaluate()"
+          [siteKey]="key"
+          (reset)="NoCaptcha()"
+          (expire)="NoCaptcha()"
+          (load)="NoCaptcha()"
+          (success)="ReCaptcha()"
+          [useGlobalDomain]="false"
+          formControlName="recaptcha"
+        >
+        </ngx-recaptcha2>
+      </div>
+      <br />
+      <button
+        class="button is-info is-large Icon2 is-outlined is-rounded"
+        type="reset"
+        (click)="SignUp()"
+        [disabled]="!SignUPForm.valid || password.value != re_pass.value"
+      >
+        <span class="icon">
+          <i class="fas fa-plus"></i>
+        </span>
+        <span>Register</span>
+      </button>
+    </div>
+  </div>
+</form>

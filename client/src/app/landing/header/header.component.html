@@ -1,0 +1,69 @@
+<div class="hero-head">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" routerLink="/Home">
+        <p class="title">Vector Magazine</p>
+      </a>
+      <span class="navbar-burger burger" [class.is-active]="active" (click)="Activate()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+    <div id="navbarMenuHeroB" class="navbar-menu" [class.is-active]="active">
+      <div class="navbar-end">
+        <a class="navbar-item has-text-light" (click)="ScrollingToElement('Evaluation')">
+          Evaluation/Classification
+        </a>
+        <a class="navbar-item has-text-light" (click)="ScrollingToElement('Articles')">
+          Articles
+        </a>
+        <a class="navbar-item has-text-light">
+          Manual
+        </a>
+        <span *ngIf="!logged" class="navbar-item">
+          <button class="button is-light" routerLink="/Signup/Home">
+            <span class="icon">
+              <i class="fas fa-users"></i>
+            </span>
+            <span class="has-text-dark">Sign Up</span>
+          </button>
+        </span>
+        <span class="navbar-item" id="login">
+          <button *ngIf="!logged" class="button is-light" routerLink="/Login">
+            <span class="icon">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="has-text-dark">Login</span>
+          </button>
+          <div *ngIf="logged">
+            <div class="dropdown" [class.is-active]="info" (click)="Info()">
+              <div class="dropdown-trigger">
+                <button class="button name" aria-haspopup="true" aria-controls="dropdown-menu">
+                  <span class="icon">
+                    <img
+                      src="https://concursosespanolesalcompleto.files.wordpress.com/2017/09/imagen-circulo-verde-de-250x250-png-cursos-los-pedroches34-e1505378820648.png?w=250"
+                      class="InSession">
+                  </span>
+                  <span class="has-text-light">{{username}}</span>
+                  <span class="icon is-small has-text-light">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a class="dropdown-item" (click)="Redirect()">Your Profile</a>
+                  <hr class="dropdown-divider">
+                  <a class="dropdown-item" (click)="Logout()" routerLink="/Home">
+                    Logout
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,16 @@
+.Title {
+  font-size: 45px;
+}
+
+.Subtitle {
+  font-size: 30px;
+}
+
+.icon {
+  margin-left: 23vh;
+}
+
+.box {
+  box-shadow: 0 20px 30px rgba(10, 10, 10, 0.9),
+    0 0 0 0.5px rgba(10, 10, 10, 0.9);
+}

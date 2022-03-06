@@ -1,0 +1,36 @@
+.margin {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.boxColor {
+  background-color: hsl(310, 49%, 28%);
+}
+
+.columns {
+  margin-left: 7vw;
+  margin-right: 7vw;
+}
+
+.info {
+  position: relative;
+  z-index: 1;
+  margin-top: 26vh;
+}
+
+.Title {
+  font-size: 60px;
+}
+
+.Subtitle {
+  font-size: 30px;
+}
+
+.container {
+  margin-top: 35vh;
+}
+
+.box {
+  box-shadow: 1px 10px 20px rgba(10, 10, 10, 0.5),
+    0 0 0 0.1px rgba(10, 10, 10, 0.5);
+}

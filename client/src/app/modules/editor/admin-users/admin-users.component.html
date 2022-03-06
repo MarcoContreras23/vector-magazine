@@ -1,0 +1,73 @@
+<br />
+<div class="columns">
+  <div class="column">
+    <article class="tile is-child notification is-light box">
+      <p class="title has-text-centered has-text-dark">Authors</p>
+      <div class="content">
+        <div *ngFor="let autor of usersAutors" class="is-centered">
+          <article class="tile is-child notification boxColor">
+            <div class="columns ">
+              <div class="column">
+                <p class="title Title has-text-light">
+                  Name: {{ autor.name }} {{ autor.lastname }}
+                </p>
+                <p class="subtitle Subtitle has-text-light">
+                  Email: {{ autor.email }}
+                </p>
+
+                <p class="subtitle Subtitle has-text-light">
+                  Phone: {{ autor.phone }}
+                </p>
+                <p class="subtitle Subtitle has-text-light">
+                  Rol: {{ autor.rol }}
+                </p>
+                <button
+                  class="button is-rounded is-medium is-light"
+                  (click)="changeRol(autor)"
+                >
+                  Change Rol
+                </button>
+              </div>
+            </div>
+          </article>
+          <br />
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="column">
+    <article class="tile is-child notification is-light box">
+      <p class="title has-text-centered has-text-dark">Evaluators</p>
+      <div class="content">
+        <div *ngFor="let evaluator of usersEvaluators" class="margin">
+          <article class="tile is-child notification boxColor">
+            <div class="columns ">
+              <div class="column">
+                <p class="title Title has-text-light">
+                  Name: {{ evaluator.name }} {{ evaluator.lastname }}
+                </p>
+                <p class="subtitle Subtitle has-text-light">
+                  Email: {{ evaluator.email }}
+                </p>
+
+                <p class="subtitle Subtitle has-text-light">
+                  Phone: {{ evaluator.phone }}
+                </p>
+                <p class="subtitle Subtitle has-text-light">
+                  Rol: {{ evaluator.rol }}
+                </p>
+                <button
+                  class="button is-rounded is-medium is-light"
+                  (click)="changeRol(evaluator)"
+                >
+                  Change Rol
+                </button>
+              </div>
+            </div>
+          </article>
+          <br />
+        </div>
+      </div>
+    </article>
+  </div>
+</div>

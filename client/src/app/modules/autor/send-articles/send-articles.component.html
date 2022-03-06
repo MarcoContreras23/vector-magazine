@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="box has-background-light Margin">
+    <div class="container has-text-centered">
+      <div class="contenedor">
+        <div class="contenedor_formulario">
+          <h1 class="is-size-1 title has-text-dark">Upload File</h1>
+          <form [formGroup]="UploadForm">
+            <div class="columns">
+              <div class="column">
+                <div class="file has-name is-boxed is-centered">
+                  <label class="file-label">
+                    <input #fi class="file-input" type="file" name="resume" (change)="SetFile(fi.files[0])" />
+                    <span class="file-cta">
+                      <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                      </span>
+                      <span class="file-label">
+                        Choose a file…
+                      </span>
+                    </span>
+                    <span *ngIf="file.value != null" class="file-name">
+                      {{ file.value.name }}
+                    </span>
+                    <span *ngIf="file.value == null" class="file-name has-text-centered">
+                      File selected
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="columns">
+              <div class="column">
+                <label class="Tit" from="title">Title:</label>
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input is-primary is-rounded" type="text" placeholder="Title" formControlName="title"
+                    id="title" />
+                  <span class=" icon is-small is-left">
+                    <i class="fas fa-heading"></i>
+                  </span>
+                </p>
+                <label class="key" from="keywords">Keywords:</label>
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input is-primary is-rounded" type="text" placeholder="Keywords" id="keywords"
+                    formControlName="keywords" />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-key"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="column">
+                <textarea class="textarea" placeholder="Abstract" formControlName="abstract"></textarea>
+              </div>
+            </div>
+            <progress class="progress is-large is-success" value="0" max="100">0%</progress>
+            <button class="button is-success is-large is-fullwidth is-outlined is-rounded" type="reset"
+              (click)="SendArticle()" [disabled]="!UploadForm.valid">
+              <span class="icon">
+                <i class="fas fa-file-upload"></i>
+              </span>
+              <span>Upload</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="hero-body">
+    <div class="container has-text-centered">
+        <p class="title has-text-light Title">
+            Vector Magazine
+        </p>
+        <p class="subtitle has-text-light Subtitle">
+            Algo así, bien impactante
+        </p>
+    </div>
+
+    <div class="columns" id="Evaluation">
+        <div class="column"></div>
+    </div>
+    <div class="info">
+        <div class="columns">
+            <div class="column">
+                <article class="tile is-child notification is-light box">
+                    <p class="title has-text-centered has-text-dark">Evaluation</p>
+                    <p class="subtitle has-text-centered has-text-dark">
+                        Our from to Evaluate
+                    </p>
+                    <div class="content">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
+                            est officia officiis, quae, sapiente optio neque molestiae
+                            repudiandae beatae dolor doloribus maxime illo! Consectetur,
+                            numquam saepe maxime illo delectus magnam.
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <div class="column">
+                <article class="tile is-child notification is-light box">
+                    <p class="title has-text-centered has-text-dark">Classification</p>
+                    <p class="subtitle has-text-centered has-text-dark">
+                        Aligned with the right tile
+                    </p>
+                    <div class="content">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                            nam repudiandae repellendus aspernatur, quasi vero? Laboriosam,
+                            magnam! Dolor fugiat id saepe doloremque rem delectus
+                            reprehenderit hic nostrum at, molestias nobis?
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <div class="columns" id="Articles">
+        <div class="column"></div>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <article class="tile is-child notification is-light box">
+                <p class="title has-text-centered has-text-dark">Articles</p>
+                <p class="subtitle has-text-centered has-text-dark">Our Articles</p>
+                <div class="content">
+                    <div *ngFor="
+                        let article of articles
+                            | paginate
+                            : { itemsPerPage: 4, currentPage: cp, totalItems: total }
+                        " class="margin">
+                        <article class="tile is-child notification boxColor">
+                            <div class="columns is-multiline">
+                                <div class="column is-4">
+                                    <p class="title has-text-light">Title: {{ article.title }}</p>
+                                    <p class="subtitle has-text-light">
+                                        KeyWords: {{ article.keywords }}
+                                    </p>
+                                </div>
+                                <div class="column">
+                                    <div class="content">
+                                        <p class="subtitle has-text-light">
+                                            File:
+                                            {{ article.file }}
+                                        </p>
+                                        <br />
+                                        <p class="subtitle has-text-light">
+                                            Abstract: {{ article.abstract }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div>
+                                        <button class="button is-rounded is-dark is-inverted"
+                                            (click)="download(article)">
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <br />
+                    </div>
+                </div>
+
+                <pagination-controls class="pagination" (pageChange)="onPageChange($event)"></pagination-controls>
+            </article>
+        </div>
+    </div>
+</div>

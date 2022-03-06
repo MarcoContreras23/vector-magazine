@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.DivMain {
+  font-family: "Open Sans", sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.icon {
+  display: block;
+  animation: moveIzq 1s ease-in;
+  z-index: 100;
+}
+
+header {
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: auto;
+  padding: 48px;
+  width: 100%;
+}
+
+.Container {
+  width: 95%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}
+
+img {
+  display: block;
+  height: 450px;
+  object-fit: cover;
+  width: auto;
+  animation: moveArr 1s ease-in;
+}
+
+.textos {
+  width: 50%;
+  color: #ffffff;
+}
+
+.textos h1 {
+  font-size: 80px;
+  animation: moveIzq 1s ease-in;
+}
+
+.textos h2 {
+  font-size: 30px;
+  animation: moveIzq 1s ease-in;
+}
+
+.textos a {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 300;
+  text-decoration: none;
+  margin-top: 30px;
+  border: 1px solid #ffffff;
+  width: 150px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px 0;
+  animation: moveArr 1s ease-in;
+}
+
+.wave {
+  height: 100px;
+  width: 100%;
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.enlaces {
+  position: fixed;
+  display: flex;
+  top: 0;
+  background: #000000;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  right: 0;
+  flex-direction: column;
+  width: 100%;
+  transition: all 1s ease;
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.uno {
+  -webkit-clip-path: circle(0% at 0 0);
+  clip-path: circle(0% at 0 0);
+}
+
+.dos {
+  -webkit-clip-path: circle(150% at 0 0);
+  clip-path: circle(150% at 0 0);
+}
+
+@keyframes moveIzq {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveDer {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveArr {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 1000px) {
+  img {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  img {
+    height: 370px;
+  }
+  .textos h1 {
+    font-size: 70px;
+  }
+  .textos h2 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  img {
+    height: 370px;
+  }
+  .textos h1 {
+    font-size: 70px;
+  }
+  .textos h2 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  img {
+    height: 300px;
+  }
+  .textos h1 {
+    font-size: 50px;
+  }
+  .textos h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  img {
+    height: 250px;
+  }
+  .textos h1 {
+    font-size: 40px;
+  }
+  .textos h2 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  img {
+    height: 220px;
+  }
+  .textos h1 {
+    font-size: 35px;
+  }
+  .textos h2 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Container {
+    width: 100%;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+  .textos {
+    width: 100%;
+    text-align: center;
+  }
+  .textos h1 {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+    img {
+      height: 160px;
+    }
+    .textos h1 {
+      font-size: 35px;
+    }
+    .textos a{
+        width: 120px;
+    }
+    .textos h2 {
+      font-size: 15px;
+    }
+  }
+  
+
+

@@ -1,0 +1,35 @@
+{
+  "db": {
+    "host": "",
+    "port": 27017,
+    "url": "mongodb://localhost:27017/MagazineDB",
+    "database": "MagazineDB",
+    "password": "",
+    "name": "db",
+    "user": "",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  },
+  "Email": {
+    "name": "Email",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "pruebas.prog3@gmail.com",
+          "pass": "pruebas12345"
+        }
+      }
+    ]
+  },
+  "files-local": {
+    "name": "files-local",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/local-storage"
+  }
+}

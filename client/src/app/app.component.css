@@ -1,0 +1,17 @@
+.is-danger {
+  background-image: linear-gradient(
+    to top,
+    hsl(309, 23%, 18%),
+    20%,
+    hsl(310, 49%, 28%) 80%
+  );
+}
+
+.hero {
+  min-height: 100vh;
+}
+
+app-header {
+  position: fixed;
+  z-index: 10;
+}

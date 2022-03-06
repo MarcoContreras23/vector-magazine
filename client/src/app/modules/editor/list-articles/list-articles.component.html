@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="columns">
+        <div class="column">
+            <article class="tile is-child notification is-light box">
+                <p class="title has-text-centered has-text-dark">Articles</p>
+                <div class="content">
+                    <div *ngFor="let article of articles" class="margin">
+                        <article class="tile is-child notification boxColor">
+                            <div class="columns is-multiline">
+                                <div class="column is-4">
+                                    <p class="title has-text-light">{{ article.title }}</p>
+                                    <p class="subtitle has-text-light">
+                                        {{ article.keywords }}
+                                    </p>
+                                </div>
+                                <div class="column">
+                                    <div class="content">
+                                        <p class="subtitle has-text-light">
+                                          
+                                            {{ article.file }}
+                                        </p>
+                                        <br />
+                                        <p class="subtitle has-text-light">
+                                            {{ article.abstract }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div>
+                                        <button class="button is-rounded is-dark is-inverted"
+                                            (click)="download(article)">
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <br />
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
